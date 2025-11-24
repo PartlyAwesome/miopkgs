@@ -32,7 +32,7 @@ stdenv.mkDerivation rec {
     owner = "jellyfin";
     repo = "jellyfin-media-player";
     rev = "811ca84b24152889cfc629c20a5606455c4ba446";
-    hash = "sha256-SO4Iyao6Ivdj6QWrUlTVQYPed5/8F30zZlPzX9jPqRE=";
+    hash = "sha256-5FChPPOew1Q3tBKoqMHVFUwHAbmY/rPV2J7sdW+ADGs=";
   };
 
   patches = [
