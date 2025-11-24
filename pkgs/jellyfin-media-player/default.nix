@@ -22,6 +22,7 @@
   qtwebchannel,
   qtwebengine,
   wrapQtAppsHook,
+  kdePackages,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -54,6 +55,7 @@ stdenv.mkDerivation rec {
       qtpositioning
       qtwebchannel
       qtwebengine
+      kdePackages.mpvqt
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
