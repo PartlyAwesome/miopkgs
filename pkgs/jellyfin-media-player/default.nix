@@ -24,15 +24,14 @@
   wrapQtAppsHook,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
-
 stdenv.mkDerivation rec {
   pname = "jellyfin-media-player";
-  version = "1.12.0-unstable-2025-10-29";
+  version = "1.12.0-unstable-2025-11-24";
 
   src = fetchFromGitHub {
     owner = "jellyfin";
     repo = "jellyfin-media-player";
-    rev = "67d1298b4c2e4d302bb9f818dd48f1794b4a3aac";
+    rev = "811ca84b24152889cfc629c20a5606455c4ba446";
     hash = "sha256-SO4Iyao6Ivdj6QWrUlTVQYPed5/8F30zZlPzX9jPqRE=";
   };
 
@@ -41,46 +40,49 @@ stdenv.mkDerivation rec {
     ./disable-update-notifications.patch
   ];
 
-  buildInputs = [
-    SDL2
-    libGL
-    libX11
-    libXrandr
-    libvdpau
-    mpv
-    qtbase
-    qt5compat
-    qtdeclarative
-    qtpositioning
-    qtwebchannel
-    qtwebengine
-  ]
-  ++ lib.optionals stdenv.hostPlatform.isLinux [
-    qtwayland
-  ];
+  buildInputs =
+    [
+      SDL2
+      libGL
+      libX11
+      libXrandr
+      libvdpau
+      mpv
+      qtbase
+      qt5compat
+      qtdeclarative
+      qtpositioning
+      qtwebchannel
+      qtwebengine
+    ]
+    ++ lib.optionals stdenv.hostPlatform.isLinux [
+      qtwayland
+    ];
 
-  nativeBuildInputs = [
-    cmake
-    ninja
-    pkg-config
-    python3
-  ]
-  ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [
-    wrapQtAppsHook
-  ];
+  nativeBuildInputs =
+    [
+      cmake
+      ninja
+      pkg-config
+      python3
+    ]
+    ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [
+      wrapQtAppsHook
+    ];
 
-  cmakeFlags = [
-    "-DQTROOT=${qtbase}"
-    "-GNinja"
-  ]
-  ++ lib.optionals (!withDbus) [
-    "-DLINUX_X11POWER=ON"
-  ]
-  ++ lib.optionals stdenv.hostPlatform.isDarwin [
-    # Prevent CMake from deploying Qt frameworks into the app bundle
-    "-DQT_DEPLOY_SUPPORT=OFF"
-    "-DCMAKE_SKIP_INSTALL_RPATH=ON"
-  ];
+  cmakeFlags =
+    [
+      "-DQTROOT=${qtbase}"
+      "-GNinja"
+    ]
+    ++ lib.optionals (!withDbus) [
+      "-DLINUX_X11POWER=ON"
+    ]
+    ++ lib.optionals stdenv.hostPlatform.isDarwin [
+      # Prevent CMake from deploying Qt frameworks into the app bundle
+      "-DQT_DEPLOY_SUPPORT=OFF"
+      "-DCMAKE_SKIP_INSTALL_RPATH=ON"
+    ];
 
   # On Darwin, we handle Qt environment setup manually to avoid broken library wrapping
   dontWrapQtApps = stdenv.hostPlatform.isDarwin;
@@ -136,7 +138,7 @@ stdenv.mkDerivation rec {
       else
         new_path="${qtbase}/lib/$framework.framework/Versions/A/$framework"
       fi
-      
+
       # Only change if the framework exists in the target
       if [ -f "$new_path" ]; then
         install_name_tool -change "$old_path" "$new_path" "$binary" 2>/dev/null || true
