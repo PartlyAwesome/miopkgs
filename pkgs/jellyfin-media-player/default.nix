@@ -40,6 +40,7 @@
   libuchardet,
   zimg,
   openalSoft,
+  libcaca,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -91,6 +92,7 @@ stdenv.mkDerivation rec {
       libuchardet
       zimg
       openalSoft
+      libcaca
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
