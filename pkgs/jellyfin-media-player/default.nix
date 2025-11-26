@@ -30,6 +30,7 @@
   libunwind,
   shaderc,
   libdovi,
+  libdvdnav,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -71,6 +72,7 @@ stdenv.mkDerivation rec {
       libunwind
       shaderc
       libdovi
+      libdvdnav
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
