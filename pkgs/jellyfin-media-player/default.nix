@@ -25,6 +25,7 @@
   kdePackages,
   libass,
   libsysprof-capture,
+  fribidi,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -61,6 +62,7 @@ stdenv.mkDerivation rec {
       kdePackages.mpvqt
       libass
       libsysprof-capture
+      fribidi
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
