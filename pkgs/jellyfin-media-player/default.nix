@@ -39,6 +39,7 @@
   rubberband,
   libuchardet,
   zimg,
+  openalSoft,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -89,6 +90,7 @@ stdenv.mkDerivation rec {
       rubberband
       libuchardet
       zimg
+      openalSoft
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
