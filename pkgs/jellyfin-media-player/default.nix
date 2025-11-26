@@ -41,6 +41,7 @@
   zimg,
   openalSoft,
   libcaca,
+  libdisplay-info,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -93,6 +94,7 @@ stdenv.mkDerivation rec {
       zimg
       openalSoft
       libcaca
+      libdisplay-info
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
