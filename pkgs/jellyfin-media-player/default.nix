@@ -37,6 +37,7 @@
   libbluray,
   lua,
   rubberband,
+  libuchardet,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -85,6 +86,7 @@ stdenv.mkDerivation rec {
       libbluray
       lua
       rubberband
+      libuchardet
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
