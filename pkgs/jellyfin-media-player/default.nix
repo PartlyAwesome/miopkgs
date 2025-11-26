@@ -23,6 +23,7 @@
   qtwebengine,
   wrapQtAppsHook,
   kdePackages,
+  libass,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -57,6 +58,7 @@ stdenv.mkDerivation rec {
       qtwebchannel
       qtwebengine
       kdePackages.mpvqt
+      libass
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
