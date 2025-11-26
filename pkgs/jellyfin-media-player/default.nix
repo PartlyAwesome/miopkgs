@@ -43,6 +43,7 @@
   libcaca,
   libdisplay-info,
   wayland-protocols,
+  libXpresent,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -97,6 +98,7 @@ stdenv.mkDerivation rec {
       libcaca
       libdisplay-info
       wayland-protocols
+      libXpresent
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
