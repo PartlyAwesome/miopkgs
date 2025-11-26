@@ -28,6 +28,7 @@
   fribidi,
   libplacebo,
   libunwind,
+  shaderc,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -67,6 +68,7 @@ stdenv.mkDerivation rec {
       fribidi
       libplacebo
       libunwind
+      shaderc
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
