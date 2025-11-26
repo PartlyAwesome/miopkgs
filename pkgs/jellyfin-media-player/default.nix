@@ -29,6 +29,7 @@
   libplacebo,
   libunwind,
   shaderc,
+  libdovi,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -69,6 +70,7 @@ stdenv.mkDerivation rec {
       libplacebo
       libunwind
       shaderc
+      libdovi
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
