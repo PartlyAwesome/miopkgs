@@ -38,6 +38,7 @@
   lua,
   rubberband,
   libuchardet,
+  zimg,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -87,6 +88,7 @@ stdenv.mkDerivation rec {
       lua
       rubberband
       libuchardet
+      zimg
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
