@@ -27,7 +27,7 @@
 }:
 stdenv.mkDerivation rec {
   pname = "jellyfin-media-player";
-  version = "1.12.0-unstable-2025-11-24";
+  version = "1.12.0-unstable-2025-11-26";
 
   src = fetchFromGitHub {
     owner = "jellyfin";
