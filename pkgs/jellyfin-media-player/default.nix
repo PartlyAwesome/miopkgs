@@ -121,6 +121,7 @@ stdenv.mkDerivation rec {
 
   cmakeFlags =
     [
+      "-DUSE_STATIC_MPVQT=OFF"
       "-DQTROOT=${qtbase}"
       "-GNinja"
     ]
