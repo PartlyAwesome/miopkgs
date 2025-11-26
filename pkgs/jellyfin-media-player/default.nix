@@ -33,6 +33,7 @@
   libdvdnav,
   libdvdread,
   mujs,
+  libarchive,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -77,6 +78,7 @@ stdenv.mkDerivation rec {
       libdvdnav
       libdvdread
       mujs
+      libarchive
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
