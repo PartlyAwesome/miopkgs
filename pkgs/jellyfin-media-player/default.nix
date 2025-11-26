@@ -36,6 +36,7 @@
   libarchive,
   libbluray,
   lua,
+  rubberband,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -83,6 +84,7 @@ stdenv.mkDerivation rec {
       libarchive
       libbluray
       lua
+      rubberband
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
