@@ -27,6 +27,7 @@
   libsysprof-capture,
   fribidi,
   libplacebo,
+  libunwind,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -65,6 +66,7 @@ stdenv.mkDerivation rec {
       libsysprof-capture
       fribidi
       libplacebo
+      libunwind
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
