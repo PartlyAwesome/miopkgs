@@ -46,7 +46,6 @@
   libXpresent,
   nv-codec-headers-11,
   libcec,
-  qt6,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -104,7 +103,6 @@ stdenv.mkDerivation rec {
       libXpresent
       nv-codec-headers-11
       libcec
-      qt6
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
