@@ -45,6 +45,7 @@
   wayland-protocols,
   libXpresent,
   nv-codec-headers-11,
+  libcec,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -101,6 +102,7 @@ stdenv.mkDerivation rec {
       wayland-protocols
       libXpresent
       nv-codec-headers-11
+      libcec
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
