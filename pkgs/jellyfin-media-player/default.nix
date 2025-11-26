@@ -31,6 +31,7 @@
   shaderc,
   libdovi,
   libdvdnav,
+  libdvdread,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -73,6 +74,7 @@ stdenv.mkDerivation rec {
       shaderc
       libdovi
       libdvdnav
+      libdvdread
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
