@@ -32,8 +32,9 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "jellyfin";
     repo = "jellyfin-media-player";
-    rev = "811ca84b24152889cfc629c20a5606455c4ba446";
+    rev = "6c7a37d5e61da281e4cc4b1d51892f785e9566ad";
     hash = "sha256-5FChPPOew1Q3tBKoqMHVFUwHAbmY/rPV2J7sdW+ADGs=";
+    fetchSubmodules = true;
   };
 
   patches = [
