@@ -44,6 +44,7 @@
   libdisplay-info,
   wayland-protocols,
   libXpresent,
+  nv-codec-headers-11,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -99,6 +100,7 @@ stdenv.mkDerivation rec {
       libdisplay-info
       wayland-protocols
       libXpresent
+      nv-codec-headers-11
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
