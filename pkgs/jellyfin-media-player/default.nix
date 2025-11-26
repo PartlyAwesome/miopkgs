@@ -24,6 +24,7 @@
   wrapQtAppsHook,
   kdePackages,
   libass,
+  libsysprof-capture,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -59,6 +60,7 @@ stdenv.mkDerivation rec {
       qtwebengine
       kdePackages.mpvqt
       libass
+      libsysprof-capture
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
