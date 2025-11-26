@@ -42,6 +42,7 @@
   openalSoft,
   libcaca,
   libdisplay-info,
+  wayland-protocols,
   withDbus ? stdenv.hostPlatform.isLinux,
 }:
 stdenv.mkDerivation rec {
@@ -95,6 +96,7 @@ stdenv.mkDerivation rec {
       openalSoft
       libcaca
       libdisplay-info
+      wayland-protocols
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       qtwayland
